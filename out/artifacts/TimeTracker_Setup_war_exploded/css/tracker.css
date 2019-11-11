@@ -1,0 +1,116 @@
+div.container {
+    background-color: #E0EDAE;
+}
+
+a {
+    color: #244E47;
+}
+
+button img {
+    height: 50px;
+}
+
+button {
+    text-align: center;
+}
+
+button:hover{
+    background-color: #244E47;
+    color: #E0EDAE;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: #244E47;
+    color: white;
+}
+
+footer a {
+    color: white;
+}
+h1,h2,h3 {
+    color: #244E47;
+}
+
+.row {
+    margin-left: 20px;
+}
+
+.btn {
+    border: 2px solid #244E47;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    color: black;
+    padding: 14px 28px;
+    margin: 40px 40px 40px 0px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+
+.startBtn {
+    background-image: url("../img/startAvailable.png");
+    background-color: white;
+    box-shadow: 5px 5px 3px #244E47 !important;
+}
+
+.startBtn.active {
+    background-image: url("../img/startActive.png");
+    background-color: green;
+}
+.startBtn.unavailable {
+    background-image: url("../img/startInactive.png");
+    background-color: lightgrey;
+}
+.pauseBtn {
+    background-image: url("../img/pauseAvailable.png");
+    background-repeat: no-repeat;
+    background-color: white;
+    box-shadow: 5px 5px 3px #244E47 !important;
+}
+.pauseBtn.active {
+    background-image: url("../img/pauseActive.png");
+    background-color: orange;
+    box-shadow: -5px -5px 3px #244E47 !important;
+}
+.pauseBtn.unavailable {
+    background-image: url("../img/pauseInactive.png");
+    background-color: lightgrey;
+}
+.stopBtn {
+    background-image: url("../img/stopAvailable.png");
+    background-repeat: no-repeat;
+    background-color: white;
+    box-shadow: 5px 5px 3px #244E47 !important;
+}
+.stopBtn.active{
+    background-image: url("../img/stopActive.png");
+    background-color: red;
+    box-shadow: -5px -5px 3px #244E47 !important;
+}
+.stopBtn.unavailable {
+    background-image: url("../img/stopInactive.png");
+    background-color: lightgrey;
+}
+.navbar-dark {
+    background-color: #244E47;
+    /*#A7D747*/
+    color: white;
+}
+
+.logout {
+    display: none;
+}
+#content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
