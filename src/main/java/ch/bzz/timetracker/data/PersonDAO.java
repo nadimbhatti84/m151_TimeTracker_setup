@@ -16,27 +16,14 @@ import java.sql.SQLException;
  *
  * @author Marcel Suter (Ghwalin)
  */
-public class PersonDAO {
+public class PersonDAO implements Dao {
 
     /**
      * counts the number of users in the database
      * @return
      */
     public Integer count() {
-        Connection connection = null;                                         // import java.sql.Connection;
-        try {
-            InitialContext initialContext = new InitialContext();
-            // import javax.naming.InitialContext
-            DataSource dataSource = (DataSource) initialContext.lookup(Config.getProperty("jdbcRessource")); // import javax.sql.DataSource
-            connection = dataSource.getConnection();
-
-        } catch (NamingException nameEx) {                                    // import javax.naming.NamingException
-            nameEx.printStackTrace();
-            throw new RuntimeException();
-        } catch (SQLException sqlEx) {                                        // import java.sql.SQLException
-            sqlEx.printStackTrace();
-            throw new RuntimeException();
-        }
+        Connection connection = MySqlDB.getConnection();                                         // import java.sql.Connection;
 
         int countRows = 0;
         PreparedStatement prepStmt = null;
@@ -53,17 +40,7 @@ public class PersonDAO {
             sqlEx.printStackTrace();
             throw new RuntimeException();
         }  finally {
-            try {
-                if (resultSet != null)
-                    resultSet.close();
-                if (prepStmt != null)
-                    prepStmt.close();
-                if (connection != null)
-                    connection.close();
-            } catch (SQLException sqlEx) {
-                sqlEx.printStackTrace();
-                throw new RuntimeException();
-            }
+            MySqlDB.sqlClose();
         }
 
         return countRows;
